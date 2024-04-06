@@ -12,7 +12,7 @@ Long Description about project. This project do that. This project is awesome...
 3. [Habeel Shamsudeen](https://github.com/habeel-shamsudeen)
 4. [Hiba Sidhik](https://github.com/hibasidhik34)
 ## Link to product walkthrough
-[link to video]((https://youtu.be/enYSigix9mc))
+[link to video](https://youtu.be/enYSigix9mc)
 ## How it Works ?
 1. The project works with reactjs as the frontend and django as the backend. it uses django to fetch data from the database and react is used to show the data in the website. the website has multiple features including tabs for expired food, non expired food, industrial symbiosis, company services, etc.
 ## How to Run
