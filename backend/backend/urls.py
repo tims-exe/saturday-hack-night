@@ -20,7 +20,7 @@ from rest_framework import routers
 from surplo_backend import views
 
 router = routers.DefaultRouter()
-router.register(r'surplo', views.SurploView, 'surplo_backend')
+#router.register(r'surplo', views.SurploView, 'surplo_backend')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
