@@ -5,7 +5,7 @@
 
 
 # Project Name
-Long Description about project. This project do that. This project is awesome...
+Long Description about project. This project do that. This project is awesome....
 ## Team members
 1. [Jacob Jomy](https://github.com/jacobjomy)
 2. [Timon K John](https://github.com/tims-exe)
