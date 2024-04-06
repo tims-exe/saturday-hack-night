@@ -43,7 +43,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewCompleted: false,
+      viewExpired: false,
       SurploList: [],
       modal: false,
       activeItems: {
@@ -103,35 +103,53 @@ class App extends Component {
 
   displayCompleted = (status) => {
     if (status) {
-      return this.setState({ viewCompleted: true });
+      return this.setState({ viewExpired: true });
     }
 
-    return this.setState({ viewCompleted: false });
+    return this.setState({ viewExpired: false });
   };
 
   renderTabList = () => {
     return (
       <div className="nav nav-tabs">
         <span
-          className={this.state.viewCompleted ? "nav-link active" : "nav-link"}
+          className={this.state.viewExpired ? "nav-link active" : "nav-link"}
           onClick={() => this.displayCompleted(true)}
         >
           Expired
         </span>
         <span
-          className={this.state.viewCompleted ? "nav-link" : "nav-link active"}
+          className={this.state.viewExpired ? "nav-link" : "nav-link active"}
           onClick={() => this.displayCompleted(false)}
         >
           Non-Expired
+        </span>
+        <span
+          className={this.state.viewExpired ? "nav-link" : "nav-link active"}
+          onClick={() => this.displayCompleted(false)}
+        >
+          Industrial Symbiosis
+        </span>
+        <span
+          className={this.state.viewExpired ? "nav-link" : "nav-link active"}
+          onClick={() => this.displayCompleted(false)}
+        >
+          Company Sevices
+        </span>
+        <span
+          className={this.state.viewExpired ? "nav-link" : "nav-link active"}
+          onClick={() => this.displayCompleted(false)}
+        >
+          Donation
         </span>
       </div>
     );
   };
 
   renderItems = () => {
-    const { viewCompleted } = this.state;
+    const { viewExpired } = this.state;
     const newItems = this.state.SurploList.filter(
-      (item) => item.expired == viewCompleted
+      (item) => item.expired == viewExpired
     );
 
     return newItems.map((item) => (
@@ -142,7 +160,7 @@ class App extends Component {
       >
         <span
           className={`surplo-title mr-2 ${
-            this.state.viewCompleted ? "completed-todo" : ""
+            this.state.viewExpired ? "completed-todo" : ""
           }`}
           title={item.description}
           style={{fontSize: "22px", paddingBottom: "20px"}}
@@ -151,7 +169,7 @@ class App extends Component {
         </span>
         <span
           className={`surplo-title mr-2 ${
-            this.state.viewCompleted ? "completed-todo" : ""
+            this.state.viewExpired ? "completed-todo" : ""
           }`}
           title={item.description}
         >
@@ -159,7 +177,7 @@ class App extends Component {
         </span>
         <span
           className={`surplo-title mr-2 ${
-            this.state.viewCompleted ? "completed-todo" : ""
+            this.state.viewExpired ? "completed-todo" : ""
           }`}
           title={item.description}
         >
@@ -167,7 +185,7 @@ class App extends Component {
         </span>
         <span
           className={`surplo-title mr-2 ${
-            this.state.viewCompleted ? "completed-todo" : ""
+            this.state.viewExpired ? "completed-todo" : ""
           }`}
           title={item.description}
         >
@@ -182,11 +200,12 @@ class App extends Component {
       <main className="container">
         <h1 className="text-black text-center my-4">Surplo</h1>
         <div className="row">
-          <div className="col-md-6 col-sm-10 mx-auto p-0">
+          <div className="mx-auto p-0">
             <div className="card p-3">
               <div className="mb-4">
                 <button
                   className="btn btn-primary"
+                  style={{ backgroundColor: '#9d7662', border: 'none' }}
                   onClick={this.createItem}
                 >
                   Add Item
